@@ -1,2 +1,14 @@
 Container Orchestration
 n this assignment, you are tasked with creating Kubernetes deployment files and a HELM chart for a MERN (MongoDB, Express.js, React.js, Node.js) based application. The provided project consists of separate frontend (FE) and backend (BE) components.
+Project setup
+Installing the node_modules:
+
+npm install --force
+Create .env file with following content but change the link to backend:
+
+REACT_APP_API_BASE_URL=http://localhost:3001
+Build Steps
+Building the docker image. React application is running at port 3000 inside the container and is exposed at port 80 in host machine.
+
+docker build -f Dockerfile -t frontend-lrccapstone .
+docker run -it -p 80:3000 frontend-lrccapstone
